@@ -15,7 +15,6 @@ Develop and test an asynchronous API with FastAPI, Postgres, Pytest, and Docker 
 - Document a RESTful API with Swagger/OpenAPI
 
 
-
 ## Dependencies:
 
 ```
@@ -58,15 +57,17 @@ https://testdriven.io/blog/fastapi-crud/
 
 ## Explanation Notes
 
+### Dockerfile
+
 Unlike Django and flask, FastAPI does not have a built-in development server. So, we'll use Uvicorn, an ASGI server, to serve up FastAPI.
 
-### environment variables:
+#### environment variables:
 
 `PYTHONDONTWRITEBYTECODE`: Prevents Python from writing pyc files to disc (equivalent to python -B option)
 
 `PYTHONUNBUFFERED`: Prevents Python from buffering stdout and stderr (equivalent to python -u option)
 
-### Uvicorn cmd in docker-compose file
+#### Uvicorn cmd in docker-compose file
 When the container spins up, Uvicorn will run with the following settings:
 
 - `--reload` enables auto-reload so the server will restart after changes are made to the code base.
@@ -75,3 +76,31 @@ When the container spins up, Uvicorn will run with the following settings:
 - `--port 8000` defines the port to host the server on.
 
 `app.main:app` tells Uvicorn where it can find the FastAPI ASGI application -- e.g., "within the 'app' module, you'll find the ASGI app, `app = FastAPI()`, in the 'main.py' file.
+
+
+## CRUD Route api
+
+| Endpoint | HTTP Method | Description 
+-----------|-------------|------------
+| /notes   | GET | Get all notes 
+-----------|-------------|------------
+| /notes/:id/   | GET | Get a particular note
+-----------|-------------|------------
+| /notes   | POST | add a note
+-----------|-------------|------------
+| /notes   | PUT | Update a note 
+-----------|-------------|------------
+| /notes   | DELETE | Delete a note 
+
+
+## TDD
+
+=> Write a test 
+=> run (RED) 
+=> Write enough code to pass the test (GREEN) 
+=> Refactor 
+
+## API Versioning with APIRouter
+
+Use FastApi's APIRouter
+
