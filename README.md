@@ -83,13 +83,9 @@ When the container spins up, Uvicorn will run with the following settings:
 | Endpoint | HTTP Method | Description 
 -----------|-------------|------------
 | /notes   | GET | Get all notes 
------------|-------------|------------
 | /notes/:id/   | GET | Get a particular note
------------|-------------|------------
 | /notes   | POST | add a note
------------|-------------|------------
 | /notes   | PUT | Update a note 
------------|-------------|------------
 | /notes   | DELETE | Delete a note 
 
 
