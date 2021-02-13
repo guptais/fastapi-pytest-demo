@@ -1,6 +1,20 @@
 # Fastapi with Pytest dockerized demo
 
-## Dependencies:
+Disclaimer: This is not my original work. It is a clone & some notes from [here](https://testdriven.io/blog/fastapi-crud/)
+
+
+## Objectives
+
+Develop and test an asynchronous API with FastAPI, Postgres, Pytest, and Docker using Test-Driven Development (TDD)
+
+- Develop a asynchronous RESTful API with Python and FastAPI
+- Practice TDD with Pytest
+- Interact with a Postgres database asynchronously
+- Containerize FastAPI and Postgres inside a Docker container
+- Parameterize test functions and mock functionality in tests with Pytest
+- Document a RESTful API with Swagger/OpenAPI
+
+### Dependencies:
 
 ```
 FastAPI v0.46.0
@@ -10,7 +24,8 @@ Pytest v5.3.2
 Databases v0.2.6
 ```
 
-## How to run
+### How to run
+
 
 Build the image and spin up the container:
 
@@ -26,10 +41,11 @@ Navigate to `http://localhost:8002/ping`. You should see:
 }
 ```
 
+### SWAGGER API Documenation
+
 To reference docs or to view the interactive API documentation, powered by Swagger UI, use `http://localhost:8002/docs:`
 
-
-To run tests
+### Run tests
 
 ```
 docker-compose exec web pytest .
@@ -39,7 +55,7 @@ docker-compose exec web pytest .
 
 https://testdriven.io/blog/fastapi-crud/
 
-## Explanation Notes
+### Explanation Notes
 
 Unlike Django and flask, FastAPI does not have a built-in development server. So, we'll use Uvicorn, an ASGI server, to serve up FastAPI.
 
