@@ -119,3 +119,9 @@ SQLAlchemy `engine`: used for communicating with the database
 It enforces type hints at runtime, and provides user friendly errors when data is invalid.
 Define how data should be in pure, canonical python; validate it with pydantic.
 
+## Monkeypatch
+
+[docs](https://docs.pytest.org/en/latest/monkeypatch.html)
+Some tests use the Pytest monkeypatch fixture to mock out the crud.post function. 
+Helps to invoke functionality which depends on global settings or which invokes code which cannot be easily tested such as network access.
+The monkeypatch fixture helps you to safely set/delete an attribute, dictionary item or environment variable, or to modify sys.path for importing.
