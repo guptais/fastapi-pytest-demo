@@ -1,6 +1,6 @@
 # Fastapi with Pytest dockerized demo
 
-Disclaimer: This is not my original work. It is a clone & some notes from [here](https://testdriven.io/blog/fastapi-crud/)
+Disclaimer: This is not my original work. It is a clone from this [tutorial](https://testdriven.io/blog/fastapi-crud/)
 
 
 ## Objectives
