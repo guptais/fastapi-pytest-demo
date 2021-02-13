@@ -125,3 +125,7 @@ Define how data should be in pure, canonical python; validate it with pydantic.
 Some tests use the Pytest monkeypatch fixture to mock out the crud.post function. 
 Helps to invoke functionality which depends on global settings or which invokes code which cannot be easily tested such as network access.
 The monkeypatch fixture helps you to safely set/delete an attribute, dictionary item or environment variable, or to modify sys.path for importing.
+
+## Parameterize decorator
+
+Pytest has a `parametrize` decorator to parametrize the arguments for the test_update_note_invalid function.
