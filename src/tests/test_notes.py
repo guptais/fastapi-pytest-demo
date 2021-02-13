@@ -24,7 +24,10 @@ def test_create_note(test_app, monkeypatch):
 
 def test_create_note_invalid_json(test_app):
     response = test_app.post("/notes/", data=json.dumps({"title": "somthing"}))
+    assert response.status_code == 422
 
+    response = test_app.post(
+        "/notes/", data=json.dumps({"title": "1", "description": "2"}))
     assert response.status_code == 422
 
 
@@ -51,11 +54,14 @@ def test_read_note_incorrect_id(test_app, monkeypatch):
     assert response.status_code == 404
     assert response.json()["detail"] == "Note not found"
 
+    response = test_app.get("/notes/0/")
+    assert response.status_code == 422
+
 
 def test_read_all_notes(test_app, monkeypatch):
     test_data = [
-        {"title": "a", "description": "blah a", "id": 1},
-        {"title": "b", "description": "blah b", "id": 2},
+        {"title": "abc", "description": "blah a", "id": 1},
+        {"title": "bbc", "description": "blah b", "id": 2},
     ]
 
     async def mock_get_all():
