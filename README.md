@@ -1,4 +1,4 @@
-# dockerized fastapi api demo
+# Fastapi with Pytest dockerized demo
 
 ## Dependencies:
 
