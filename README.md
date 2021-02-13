@@ -104,3 +104,14 @@ When the container spins up, Uvicorn will run with the following settings:
 
 Use FastApi's APIRouter
 
+## Postgresql setup
+
+add a service to the docker-compose.yml file, add the appropriate environment variables, and install asyncpg.
+
+SQLAlchemy `engine`: used for communicating with the database 
+`Metadata` instance: used for creating the database schema.
+
+`databases` is an async SQL query builder that works on top of the `SQLAlchemy Core` expression language.
+
+
+
