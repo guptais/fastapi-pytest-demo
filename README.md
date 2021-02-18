@@ -109,6 +109,12 @@ SQLAlchemy `engine`: used for communicating with the database
 
 `databases` is an async SQL query builder that works on top of the `SQLAlchemy Core` expression language.
 
+command to ensure the `notes` table was created: 
+
+```
+docker-compose exec db psql --username=hello_fastapi --dbname=hello_fastapi_dev
+```
+
 ## Pydantic
 
 [docs](https://pydantic-docs.helpmanual.io/)
